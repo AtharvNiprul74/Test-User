@@ -1,9 +1,10 @@
 const mysql2 = require("mysql2")
 const pool = mysql2.createPool({
-    host:"localhost",
-    user:"root",
-    password:"root",
-    database:"user_test"
+    host:process.env.MYSQLHOST,
+    user:process.env.MYSQLUSER,
+    password:process.env.MYSQLPASSWORD,
+    database:process.env.MYSQLDATABASE,
+    port:process.env.MYSQLPORT
 })
 
 module.exports = pool
